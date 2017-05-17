@@ -28,12 +28,12 @@ class MapProvider implements MapProviderInterface
     /**
      * @var \Smile\Map\Api\MapInterface[]
      */
-    private $mapProviders;
+    protected $mapProviders;
 
     /**
      * @var MapHelper
      */
-    private $mapHelper;
+    protected $mapHelper;
 
     /**
      * Contructor.

@@ -1,7 +1,6 @@
 <?php
 /**
  * DISCLAIMER
- *
  * Do not edit or add to this file if you wish to upgrade this module to newer
  * versions in the future.
  *
@@ -27,12 +26,12 @@ class GeoPoint implements GeoPointInterface
     /**
      * @var float
      */
-    private $latitude;
+    protected $latitude;
 
     /**
      * @var float
      */
-    private $longitude;
+    protected $longitude;
 
     /**
      * Constructor.
@@ -40,9 +39,9 @@ class GeoPoint implements GeoPointInterface
      * @param float $latitude  Latitude
      * @param float $longitude Longitude
      */
-    public function __construct($latitude, $longitude)
+    public function __construct($latitude = null, $longitude = null)
     {
-        $this->latitude  = $latitude;
+        $this->latitude = $latitude;
         $this->longitude = $longitude;
     }
 
@@ -55,10 +54,34 @@ class GeoPoint implements GeoPointInterface
     }
 
     /**
+     * Set Latitude value.
+     *
+     * @param float $latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getLongitude()
     {
         return $this->longitude;
+    }
+
+    /**
+     * Set Longitude value.
+     *
+     * @param float $longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
     }
 }

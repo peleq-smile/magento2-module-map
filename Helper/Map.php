@@ -40,7 +40,7 @@ class Map extends AbstractHelper
     /**
      * @var \Magento\Framework\Locale\Resolver
      */
-    private $localeResolver;
+    protected $localeResolver;
 
     /**
      * Map constructor.

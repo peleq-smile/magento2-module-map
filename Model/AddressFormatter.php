@@ -53,22 +53,22 @@ class AddressFormatter
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
-    private $storeManager;
+    protected $storeManager;
 
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
-    private $scopeConfig;
+    protected $scopeConfig;
 
     /**
      * @var \Magento\Directory\Api\CountryInformationAcquirerInterface
      */
-    private $countryInfo;
+    protected $countryInfo;
 
     /**
      * @var \Magento\Framework\Filter\FilterManager
      */
-    private $filterManager;
+    protected $filterManager;
 
     /**
      * Constructor.
@@ -118,7 +118,7 @@ class AddressFormatter
      *
      * @return array
      */
-    private function getVariables(AddressInterface $address)
+    protected function getVariables(AddressInterface $address)
     {
         $variables = $address->getData();
 
@@ -148,7 +148,7 @@ class AddressFormatter
      *
      * @return string
      */
-    private function getAddressTemplate($format, $storeId)
+    protected function getAddressTemplate($format, $storeId)
     {
         $path = self::FORMAT_XML_BASE_XPATH . '/' . $format;
 
