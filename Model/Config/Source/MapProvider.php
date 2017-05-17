@@ -24,7 +24,7 @@ class MapProvider implements \Magento\Framework\Data\OptionSourceInterface
     /**
      * @var \Smile\Map\Model\MapProvider
      */
-    private $mapProvider;
+    protected $mapProvider;
 
     /**
      * MapProvider constructor.

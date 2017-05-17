@@ -44,7 +44,7 @@ class Map extends AbstractHelper
     /**
      * @var \Magento\Framework\Locale\Resolver
      */
-    private $localeResolver;
+    protected $localeResolver;
 
     /**
      * @var \Magento\MediaStorage\Helper\File\Storage\Database

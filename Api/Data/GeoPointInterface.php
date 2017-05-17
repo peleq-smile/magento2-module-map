@@ -1,7 +1,6 @@
 <?php
 /**
  * DISCLAIMER
- *
  * Do not edit or add to this file if you wish to upgrade this module to newer
  * versions in the future.
  *
@@ -25,9 +24,18 @@ interface GeoPointInterface
     /**#@+
      * Constants for keys of data array. Identical to the name of the getter in snake case
      */
-    const LATITUDE  = 'latitude';
+    const LATITUDE = 'latitude';
     const LONGITUDE = 'longitude';
     /**#@-*/
+
+    /**
+     * Set Latitude value.
+     *
+     * @param float $latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude);
 
     /**
      * Geopoint latitude.
@@ -35,6 +43,15 @@ interface GeoPointInterface
      * @return float
      */
     public function getLatitude();
+
+    /**
+     * Set Longitude value.
+     *
+     * @param float $longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude);
 
     /**
      * Geopoint longitude.

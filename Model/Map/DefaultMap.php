@@ -29,22 +29,22 @@ class DefaultMap implements \Smile\Map\Api\MapInterface
     /**
      * @var string
      */
-    private $identifier;
+    protected $identifier;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var array
      */
-    private $config;
+    protected $config;
 
     /**
      * @var FilterManager
      */
-    private $filterManager;
+    protected $filterManager;
 
     /**
      * Constructor.
