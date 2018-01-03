@@ -76,7 +76,22 @@ define(['jquery', 'leaflet'], function ($, L) {
     Geocoder.prototype.prepareResult = function (result) {
         var processedResult = {};
 
-        if (result['geometry']['bounds']) {
+        if (result['geometry']['viewport']) {
+            processedResult = {
+                name: result['address_components'][0]['short_name'],
+                bounds: new L.LatLngBounds(
+                    {
+                        lat: result['geometry']['viewport'].getNorthEast().lat(),
+                        lng: result['geometry']['viewport'].getNorthEast().lng()
+                    },
+                    {
+                        lat: result['geometry']['viewport'].getSouthWest().lat(),
+                        lng: result['geometry']['viewport'].getSouthWest().lng()
+                    }
+                ),
+                location: new L.LatLng(result['geometry']['location'].lat(), result['geometry']['location'].lng())
+            };
+        } else if (result['geometry']['bounds']) {
             processedResult = {
                 name: result['address_components'][0]['short_name'],
                 bounds: new L.LatLngBounds(
